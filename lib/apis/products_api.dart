@@ -5,19 +5,22 @@ import 'package:makeup_store/models/product_model.dart';
 
 
 Future<ProductModel?> getProducts(
-    {required int page,
+    {int? page,
     String? keyword,
     String? brand,
     String? productType}) async {
-  var url = "https://dart-makeup-store.herokuapp.com/products/page=$page";
-  if(keyword!=null){
-    url+="/keyword=$keyword";
-  }
-  if(brand!=null){
-    url+="/brand=$brand";
-  }
-  if(productType!=null){
-    url+="/productType=$productType";
+  var url = "https://dart-makeup-store.herokuapp.com/products";
+  if(page!=null) {
+     url+='/page=$page';
+    if (keyword != null) {
+      url += "/keyword=$keyword";
+    }
+    if (brand != null) {
+      url += "/brand=$brand";
+    }
+    if (productType != null) {
+      url += "/productType=$productType";
+    }
   }
   final client = Dio();
   try {

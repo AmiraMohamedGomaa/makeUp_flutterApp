@@ -22,7 +22,7 @@ class _CreateHomeGridView extends State<HomeGridView> {
   void initState() {
     final String url = 'https://dart-makeup-store.herokuapp.com/products';
     super.initState();
-    getProducts(page: 1).then((value) {
+    getProducts().then((value) {
       if (value != null) {
         setState(() {
           productObject = value;
