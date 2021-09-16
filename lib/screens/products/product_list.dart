@@ -91,7 +91,7 @@ class _ProductListState extends State<ProductList> {
                           textAlign: TextAlign.center,
                           maxLines: 2,
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                              fontSize: 14,),
                         ),
                       ],
                     ),
